@@ -1,0 +1,46 @@
+program Segment;
+var i :byte;
+procedure Init();
+begin
+TRISA:=$FF;
+TRISC:=$00;
+PORTC:=$3F;
+ADCON1:=$06;
+end;
+function Masque(num: byte): byte;
+begin
+case num of
+1: Masque:=$06;
+2: Masque:=$5B;
+3: Masque:=$4F;
+4: Masque:=$66;
+5 :Masque:=$6D;
+6 :Masque:=$7D;
+7 :Masque:=$07;
+8 :Masque:=$7F;
+9 :Masque:=$6F;
+10:Masque:=$77;
+11:Masque:=$7C;
+12:Masque:=$58;
+13:Masque:=$5E;
+14:Masque:=$79;
+15:Masque:=$71;
+end;
+end;
+
+begin
+Init();
+i:=1;
+while(1) do
+begin
+
+if(PORTA.1=0) then
+begin
+
+ PORTC:=Masque(i);
+
+delay_ms(1000);
+i:=i+1;
+end;
+end;
+end.

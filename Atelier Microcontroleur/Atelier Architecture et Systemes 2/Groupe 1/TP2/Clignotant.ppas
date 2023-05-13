@@ -1,0 +1,24 @@
+program Clignotant;
+procedure init();
+begin
+TRISB:=$00;
+TRISC:=$FF;
+PORTB:=$00;
+end;
+
+
+begin
+init();
+while (1) do
+begin
+if(PORTC.1 =1) then
+begin
+PORTB:=$FF;
+delay_ms(500);
+PORTB:=$00;
+delay_ms(500);
+end
+else
+  PORTB:=$00;
+end;
+end.

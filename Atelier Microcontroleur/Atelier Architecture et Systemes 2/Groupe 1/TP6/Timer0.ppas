@@ -1,0 +1,34 @@
+program Timer0;
+
+var cnt : byte;
+
+procedure interrupt;
+begin
+  if (cnt = 125) then
+                 begin
+                      PORTC.0 := PORTC.0 xor 1;     // toggle PORTC LEDs
+                      cnt := 0;               // reset cnt
+                 end
+                 else
+                 begin
+                      Inc(cnt);                   // increment value of cnt on every interrupt
+                      TMR0   := 6;
+                      //INTCON := $20;              // set T0IE, clear T0IF
+                      INTCON.T0IE :=1;
+                      INTCON.T0IF :=0;
+                 end;
+end;
+
+begin
+  OPTION_REG := $84;         // assign prescaler to TMR0 (/32)
+  TRISC := 0x00;             // PORTC is output
+  PORTC := 0x00;             // initialize PORTC
+  TMR0  := 6;                // timer0 initial value
+  INTCON := $A0;             // enable TMRO interrupt
+  cnt := 0;                  // initialize cnt
+
+  while TRUE do
+  begin
+
+  end;
+end.

@@ -1,0 +1,36 @@
+program Exercice3;
+
+procedure init();
+begin
+TRISC:=$ff;
+TRISB:=$00;
+PORTB:=$00;
+end;
+    var i : byte;
+    var nbr : string[4];
+begin
+init();
+Lcd_Init(PORTB);
+Lcd_Cmd(LCD_CURSOR_OFF);
+Lcd_Out(1,3,'SEM2 ISET NABEUL');
+Lcd_Out(2,2,'TP3 ARCH ET SYST 2');
+
+delay_ms(2000);
+Lcd_Cmd(LCD_clear);
+
+
+i:=0;
+Lcd_Out(1,1,'Nbr Voitures :');
+while (true) do
+begin
+if(PORTC.0=1) then
+ begin
+i:=i+1;
+ByteToStr(i , nbr);
+Lcd_Out(2,1,nbr);
+delay_ms(1000);
+end;
+ end;
+
+
+end.

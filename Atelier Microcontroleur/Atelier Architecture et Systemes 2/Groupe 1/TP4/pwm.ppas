@@ -1,0 +1,19 @@
+program pwm;
+
+begin
+TRISB := 0;
+TRISC := $FF;
+
+ Pwm_Init(5000);
+ Pwm_Change_Duty(127);
+ Pwm_Start();
+ while true do
+ begin
+
+if(PORTB.1=0)then
+ Pwm_Change_Duty(25);
+if(PORTB.2=0)then
+ Pwm_Change_Duty(0);
+
+end;
+end.

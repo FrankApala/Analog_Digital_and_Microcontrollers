@@ -1,0 +1,14 @@
+program DIGITAL_OUT;
+
+begin
+  TRISA :=$00;
+  TRISB :=$00;
+  TRISC :=$00;
+  TRISD :=$00;
+  TRISE :=$00;
+  PORTA :=$2A;
+  PORTB :=$F0;
+  PORTC :=$3C;
+  PORTD :=$C3;
+  PORTE :=$07;
+end.

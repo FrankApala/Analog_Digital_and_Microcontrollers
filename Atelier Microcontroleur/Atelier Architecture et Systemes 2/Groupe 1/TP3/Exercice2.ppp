@@ -1,0 +1,29 @@
+[DeviceName]
+Value=P16F877
+[DeviceClock]
+Value=8
+[MainUnit]
+Value=Exercice2.ppas
+[DeviceFlags]
+Count=1
+Value0=_WDT_OFF = $3FFB
+[BuildSimDebug]
+Build=0
+SimDebug=0
+[ProjectFiles]
+Count=0
+[OtherFiles]
+Count=4
+Value0=C:\Users\Mr Suit\Desktop\Chenillard.ppas
+Value1=C:\Users\Mr Suit\Desktop\Atelier Architecture et Systemes 2\Groupe 1\TP 1\DIGITAL_OUT.ppas
+Value2=C:\Users\Mr Suit\Desktop\Atelier Architecture et Systemes 2\Groupe 1\TP2\Clignotant.ppas
+Value3=C:\Users\Mr Suit\Desktop\Atelier Architecture et Systemes 2\Groupe 1\TP3\Exercice1.ppas
+[TabIndex]
+Value=0
+[SearchPath]
+Count=3
+Value0=C:\Program Files (x86)\Mikroelektronika\mikroPascal\Defs\
+Value1=C:\Program Files (x86)\Mikroelektronika\mikroPascal\Uses\p16\
+Value2=C:\Users\Mr Suit\Desktop\Atelier Architecture et Systemes 2\Groupe 1\TP3\
+[EEPROMinfo]
+isused=0

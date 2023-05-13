@@ -1,0 +1,25 @@
+[DeviceName]
+Value=P16F877
+[DeviceClock]
+Value=8
+[MainUnit]
+Value=Timer.ppas
+[DeviceFlags]
+Count=1
+Value0=_WDT_OFF = $3FFB
+[BuildSimDebug]
+Build=0
+SimDebug=0
+[ProjectFiles]
+Count=0
+[OtherFiles]
+Count=0
+[TabIndex]
+Value=0
+[SearchPath]
+Count=3
+Value0=C:\Program Files (x86)\Mikroelektronika\mikroPascal\Defs\
+Value1=C:\Program Files (x86)\Mikroelektronika\mikroPascal\Uses\p16\
+Value2=C:\Users\Mr Suit\Desktop\Atelier Coneption d'interfaces\Code\
+[EEPROMinfo]
+isused=0

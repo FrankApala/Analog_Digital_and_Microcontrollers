@@ -1,0 +1,28 @@
+program Exercice2;
+procedure init();
+begin
+TRISC:=$ff;
+TRISB:=$00;
+PORTB:=$00;
+end;
+begin
+Lcd_Init(PORTB);
+Lcd_Cmd(LCD_CURSOR_OFF);
+Lcd_Out(1,3,'SEM2 ISET NABEUL');
+Lcd_Out(2,2,'TP3 ARCH ET SYST 2');
+
+delay_ms(2000);
+
+Lcd_Cmd(LCD_clear);
+while(1) do
+begin
+if(PORTC.1=0) then
+begin
+Lcd_Out(1,4,'ACCES INTERDIT');
+end
+else
+Lcd_Out(1,4,'ACCES AUTORISE');
+ end
+
+
+end.

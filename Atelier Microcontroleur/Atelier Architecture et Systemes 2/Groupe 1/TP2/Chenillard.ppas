@@ -1,0 +1,24 @@
+program chenillard;
+
+procedure init();
+begin
+TRISB:=$00;
+TRISC:=$FF;
+PORTB:=$01;
+end;
+begin
+init();
+while (TRUE) do
+begin
+if(PORTC.1 =1) and (PORTB.7= 0) then
+begin
+PORTB := PORTB shl 1;
+delay_ms(200);
+end
+else
+  PORTB:=$01;
+  delay_ms(200);
+  end;
+end.
+
+

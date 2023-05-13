@@ -1,0 +1,57 @@
+program Exercice2;
+  var
+kp: byte;
+ T: string[4];
+
+procedure init();
+begin
+TRISB:=$ff;
+TRISD:=$00;
+PORTD:=$00;
+end;
+
+procedure saisie (var T:string[4];l,c : byte);
+   var i,kp : byte;
+begin
+
+for i:=0 to 3 do
+begin
+  kp := 0;
+ while kp = 0 do
+kp := Keypad_Read();
+
+
+if kp > 10 then
+      kp := kp + 54
+    else
+      kp := kp + 47;
+      T[i]:=kp;
+      Lcd_chr(l,c+i,kp);
+      delay_ms(300);
+ end;
+
+   end;
+   
+begin
+ Keypad_Init(PORTB);
+init();
+Lcd_init(PORTD);
+Lcd_Cmd(LCD_CURSOR_OFF);
+
+
+
+while 1 do
+begin
+Lcd_cmd(LCD_CLEAR);
+Lcd_out(1,1,'Entrer code :');
+saisie(T,1,15);
+
+if (strcmp(T,'1234')=0) then
+Lcd_out(2,5,'Code Valide')
+ else
+Lcd_out(2,3,'Code Invalide');
+delay_ms(1000);
+
+
+ end;
+end.

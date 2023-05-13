@@ -1,0 +1,21 @@
+program Telerupteur;
+procedure Init();
+begin
+TRISB := $00;
+TRISA := $FF;
+PORTB := $00;
+
+end;
+
+begin
+Init();
+ADCON1:=$06;
+while (1) do
+begin
+if (PORTA.0 =1) then
+begin
+PORTB.0:= 1 xor PORTB.0;
+Delay_ms(500);
+end;
+end;
+end.

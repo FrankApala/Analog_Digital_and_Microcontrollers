@@ -1,0 +1,31 @@
+program interrupt;
+ var i:byte;
+
+procedure interrupt;
+begin
+if INTCON.INTF = 1 then
+begin
+for   i:=0 to 9 do
+begin
+PORTC.0:=$01;
+delay_ms(500);
+PORTC.0:=$00;
+delay_ms(500);
+end;
+end;
+INTCON.INTF:=0;
+INTCON.GIE:=1;
+end;
+
+
+begin
+TRISB:=$ff;
+TRISC:=$00;
+PORTC:=$00;
+INTCON:=$90;
+
+  while TRUE do
+  begin
+
+  end;
+end.
